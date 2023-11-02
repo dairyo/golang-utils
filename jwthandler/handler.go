@@ -20,7 +20,7 @@ type Config struct {
 	MiddlewareOptions  []jwtmiddleware.Option
 }
 
-func JWTHandlerFactory(c *Config) (func(next http.Handler) http.Handler, error) {
+func Factory(c *Config) (func(next http.Handler) http.Handler, error) {
 	issuerURL, err := url.Parse(fmt.Sprintf("https://%s/", c.Issuer))
 	if err != nil {
 		return nil, err
