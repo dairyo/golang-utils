@@ -6,3 +6,10 @@ func ToValue[T any](t *T) T {
 	}
 	return *t
 }
+
+func ToPtr[T comparable](t T) *T {
+	if t == *new(T) {
+		return nil
+	}
+	return &t
+}
