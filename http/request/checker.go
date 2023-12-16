@@ -8,7 +8,7 @@ func HasXMLHttpRequest(r *http.Request) bool {
 }
 
 // CheckRequestedWith checks X-Requested-With value.
-// It can be use Prevention.
+// It can be use CSRF Prevention.
 func CheckRequestedWith(r *http.Request, expected string) bool {
 	actual := r.Header.Get("X-Requested-With")
 	if actual != expected {
